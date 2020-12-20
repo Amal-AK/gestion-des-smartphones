@@ -75,10 +75,36 @@ class affectationController extends Controller
     }
 
 
+    function viewMore(Request $req) {
 
+      $req->validate([
+         'immo' => 'exists:affectation' , 
+         'matricule' => 'exists:acteur,MATRICULE' ,]);
+
+       $immo = $req->immo ; 
+       $mat = $req->matricule ; 
+       $aff = DB::select('select * from affectation 
+                         left outer join smartphone on smartphone.id_smart = affectation.id_smart 
+                         left outer join acteur on acteur.id_act = affectation.id_act
+                         left outer join centre on centre.id_centre = acteur.idcentre
+                         left outer join modele on modele.id_model = smartphone.id_model
+                         left outer join marque on marque.id_marque = smartphone.id_marque
+                         left outer join etat on etat.id_etat = affectation.id_etat
+                         where smartphone.immo='.$immo.' and acteur.MATRICULE='.$mat.' limit 1') ; 
+       $data = $aff[0] ; 
+       return view('DetailAffectation' , ['data'=> $data]) ; 
+   }
 
 
     function afficher(){
        return view('AfficherAffectations');
     }
+
+    function delete(Request $req) {
+       $id = $req->id_affect ; 
+       $row = affectation::where('id_affect', $id)->delete() ; 
+       return redirect('afficherAffectations'); 
+
+    }
+   
 }

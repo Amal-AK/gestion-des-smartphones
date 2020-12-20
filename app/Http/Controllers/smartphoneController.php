@@ -35,7 +35,9 @@ class smartphoneController extends Controller
         return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $actionBtn = '<div class="d-flex  justify-content-around"> <button class="edit btn btn-success btn-sm"><i class="far fa-edit"></i></button> <button class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button> </div>';
+                    $actionBtn = '<div class="d-flex  justify-content-around">
+                                  <button class="edit btn btn-success btn-sm"><i class="far fa-edit"></i></button> 
+                                  <button data-confirm="Êtes-vous sûr de vouloir supprimer ce smartphone ?" class="delete btn btn-danger btn-sm" value="' . $row->id_smart . '"  ><i class="far fa-trash-alt"></i></button> </div>';
                     return $actionBtn;
                 })
                 ->rawColumns(['action'])
@@ -97,5 +99,13 @@ class smartphoneController extends Controller
 
          return  view ( 'smartphoneAjouté' , ['tel'=> $tel , 'marque'=> $marque , 'model'=> $model , 'etat'=>$etat ]); 
         
+    }
+
+
+
+    function delete(Request $req) {
+      $id = $req->id ; 
+      $row = smartphone::where('id_smart', $id)->delete() ; 
+
     }
 }

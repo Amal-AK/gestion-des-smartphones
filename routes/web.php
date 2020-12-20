@@ -50,4 +50,14 @@ Route::get('/getAffectations' , [affectationController::class , 'getdata'
 
 Route::get('/afficherAffectations' , [affectationController::class , 'afficher'
 ])->middleware(['auth']) ;
+
+Route::post('/VoirAffectation' , [affectationController::class , 'viewMore'] )->middleware(['auth']) ; 
+
+Route::post('/deleteAffectation' , [affectationController::class , 'delete'
+])->middleware(['auth']) ;
+
+
+Route::get('/removeSmartphone' , [smartphoneController::class , 'delete'
+])->middleware(['auth']);
+
 require __DIR__.'/auth.php';

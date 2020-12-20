@@ -8,7 +8,7 @@
 							<h5 class="m-b-10">Smartphones</h5>
 						</div>
 						<ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#">Smartphones</a></li>
 							<li class="breadcrumb-item"><a href="#">Afficher</a></li>
 						
@@ -43,6 +43,7 @@
                         </tbody>
                      </table>
 					</div>
+                    <div class="card-footer bg-c-blue" ></div>
                 </div>
             </div>
         </div>
@@ -58,6 +59,7 @@
     
     var table = $('.yajra-datatable').DataTable({
         processing: true,
+        responsive: true,
         serverSide: true,
         ajax: "{{ route('smartphone.list') }}",
         columns: [
@@ -73,9 +75,25 @@
         ]
     });
   
-   
+  } );
+
+  $('.yajra-datatable').on('click', '.delete', function (e) { 
+    e.preventDefault();
+    var id = this.value ; 
+    var choice = confirm(this.getAttribute('data-confirm'));
+
+    if(choice){
+       this.parentElement.parentElement.parentElement.remove(); 
+       $.ajax({
+        url: "removeSmartphone", 
+        type : 'GET',
+        dataType : 'json' , 
+        data: {  'id': id }
+    });
+    } 
     
-  });
+ } );
+
 </script>
 
 </x-app-layout>

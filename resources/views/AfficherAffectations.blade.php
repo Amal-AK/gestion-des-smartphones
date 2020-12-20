@@ -9,7 +9,7 @@
 							<h5 class="m-b-10">Affectations</h5>
 						</div>
 						<ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#">Affectations</a></li>
 							<li class="breadcrumb-item"><a href="#">Afficher</a></li>
 						
@@ -44,7 +44,9 @@
                         </thead><tbody>
                         </tbody>
                      </table>
+                   
 					</div>
+                    <div class="card-footer bg-c-green" ></div>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@
 										<h5 class="modal-title" id="exampleModalLabel">Voir plus de détails </h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
-                                    <form method='POST' action="#">
+                                    <form method='POST' action="VoirAffectation">
                                     @csrf
 									<div class="modal-body">
 											<div class="form-group">

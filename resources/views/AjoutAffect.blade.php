@@ -8,7 +8,7 @@
 							<h5 class="m-b-10">Affectations des smartphones</h5>
 						</div>
 						<ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#">Ajouter une Affectation</a></li>
 							<li class="breadcrumb-item"><a href="#">Formulaire d'ajout</a></li>
 						
@@ -128,8 +128,8 @@
                     <div class="card-footer bg-light" ></div>
                 </div>
                 <div class="card">
-                    <div class="card-header bg-c-green">
-                    <h5 class="text-white" >Ajouter les informations de l'affectation </h5>
+                    <div class="card-header  bg-light">
+                    <h5  >Ajouter les informations de l'affectation </h5>
                     </div>
                     <div class="card-body">
                          <div class="row d-flex justify-content-between">
@@ -203,7 +203,7 @@
                             </div>
             
                             <div class="col-sm-12 d-flex">
-                                <button class="btn btn-primary has-ripple" id="submit" type="submit">Confirmer</button>
+                                <button class="btn btn-success has-ripple" id="submit" type="submit">Confirmer</button>
                             </div>
                           
                         </div>
