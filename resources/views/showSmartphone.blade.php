@@ -26,8 +26,7 @@
 						<h5>Liste des smartphones existants dans la base de données </h5>
 					</div>
 					<div class="card-body">
-          
-                    <table class="table table-bordered yajra-datatable">
+                    <table class="table table-bordered table-striped yajra-datatable">
                         <thead>
                             <tr>
                                 <th>N</th>
@@ -39,10 +38,8 @@
                                 <th>Affecté?</th>
                                 <th>Etat</th>
                                 <th>Action</th>
-                               
                             </tr>
-                        </thead>
-                        <tbody>
+                        </thead><tbody>
                         </tbody>
                      </table>
 					</div>
@@ -64,20 +61,15 @@
         serverSide: true,
         ajax: "{{ route('smartphone.list') }}",
         columns: [
-            {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-            {data: 'cod_marque', name: 'Marque'},
-            {data: 'cod_model', name: 'model'},
-            {data: 'n_serie1', name: 'serie2'},
-            {data: 'n_serie2', name: 'serie1'},
-            {data: 'immo', name: 'immo'},
-            {data: 'affecte', name: 'immo'},
-            {data: 'cod_etat', name: 'immo'},
-            {
-                data: 'action', 
-                name: 'action', 
-                orderable: true, 
-                searchable: true
-            },
+            {data: 'DT_RowIndex', orderable: true, searchable: true},
+            {data: 'cod_marque', orderable: true, searchable: true},
+            {data: 'cod_model', norderable: true, searchable: true},
+            {data: 'n_serie1', orderable: true, searchable: true},
+            {data: 'n_serie2', orderable: true, searchable: true},
+            {data: 'immo', orderable: true, searchable: true},
+            {data: 'affecte', orderable: true, searchable: true},
+            {data: 'cod_etat', orderable: true, searchable: true},
+            {data: 'action'},
         ]
     });
   

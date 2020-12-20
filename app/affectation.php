@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $date_attrib
  * @property string $commentaire
  * @property string $recupere_par
+ * @property string $remis_par
  * @property Acteur $acteur
  * @property Smartphone $smartphone
  * @property Acteur $acteur
@@ -40,8 +41,8 @@ class affectation extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id_act', 'id_smart', 'id_remis', 'id_etat', 'immo', 'date_attrib', 'commentaire', 'recupere_par'];
-
+    protected $fillable = ['id_act', 'id_smart', 'id_remis', 'id_etat', 'immo', 'date_attrib', 'commentaire', 'recupere_par', 'remis_par'];
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -58,7 +59,7 @@ class affectation extends Model
         return $this->belongsTo('App\Smartphone', 'id_smart', 'id_smart');
     }
 
-   
+ 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

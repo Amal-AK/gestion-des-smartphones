@@ -31,6 +31,7 @@ class etat extends Model
      * @var array
      */
     protected $fillable = ['cod_etat'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

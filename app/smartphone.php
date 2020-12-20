@@ -39,7 +39,7 @@ class smartphone extends Model
      * @var array
      */
     protected $fillable = ['id_marque', 'id_model', 'id_etat', 'n_serie1', 'n_serie2', 'immo', 'affecte'];
-
+    public $timestamps = false;
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

@@ -34,7 +34,7 @@
 			<div class="navbar-content scroll-div " >
 				<div class="">
 					<div class="main-menu-header">
-						<img class="img-radius" src="" alt="User-Profile-Image">
+						<img class="img-radius" src="/images/user.png" alt="User-Profile-Image">
 						<div class="user-details">
 							<div id="more-details">{{ Auth::user()->name }}</div>
 						</div>
@@ -62,39 +62,37 @@
 					<li class="nav-item pcoded-hasmenu">
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-share"></i></span><span class="pcoded-mtext">Affectations</span></a>
 					    <ul class="pcoded-submenu">
-                            <li><a href="#">Afficher</a></li>
+                            <li><a href="afficherAffectations">Afficher</a></li>
 					        <li><a href="AjouterAffectation">Ajouter</a></li>
-					        <li><a href="#">Modifier</a></li>
-					        <li><a href="#">Supprimer</a></li>
+							<li><a href="#">Scan d'une décharge</a></li>
 					   
 					    </ul>
                     </li>
-                    <li class="nav-item pcoded-hasmenu">
-					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-undo-alt"></i></span><span class="pcoded-mtext">Restitutions</span></a>
-					    <ul class="pcoded-submenu">
-                            <li><a href="#">Afficher</a></li>
-					        <li><a href="#">Ajouter</a></li>
-					        <li><a href="#">Modifier</a></li>
-					        <li><a href="#">Supprimer</a></li>
-					   
-					    </ul>
-					</li>
+  
                     <li class="nav-item pcoded-hasmenu">
 					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-mobile-alt"></i></span><span class="pcoded-mtext">Smartphones</span></a>
 					    <ul class="pcoded-submenu">
                             <li><a href="indexSmartphone">Afficher</a></li>
-					        <li><a href="#">Ajouter</a></li>
+					        <li><a href="/ajoutSmartphone">Ajouter</a></li>
 					   
 					    </ul>
-                    </li>
-                 
-					<li class="nav-item pcoded-menu-caption">
-					    <label>Visualisation</label>
 					</li>
-					<li class="nav-item">
-					    <a href="form_elements.html" class="nav-link "><span class="pcoded-micon"><i class="far fa-map"></i></span><span class="pcoded-mtext">Openstreet Map</span></a>
+					<li class="nav-item pcoded-hasmenu">
+					    <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="fa fa-undo-alt"></i></span><span class="pcoded-mtext">Restitutions</span></a>
+					    <ul class="pcoded-submenu">
+                            <li><a href="#">Afficher</a></li>
+					        <li><a href="#">Ajouter</a></li>
+					      
+					   
+					    </ul>
 					</li>
+
 				</ul>
+				<div class="card text-center">
+					<div class="card-block">
+						<img src='images/seaal.png' width="70"></img>
+					</div>
+				</div>
 		
 			</div>
 		</div>
@@ -120,11 +118,12 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                   
                                     <i class="feather icon-user"></i>
-                                     user
+                                      Logout
 								</a>
 								<div class="dropdown-menu dropdown-menu-right profile-notification">
 									<div class="pro-head">
-										<img src="" class="img-radius" alt="User-Profile-Image">
+										<img src="/images/user.png" class="img-radius" alt="User-Profile-Image">
+										
 										<span>{{ Auth::user()->name }}</span>
 										<a href="{{route('logout')}}" class="dud-logout" title="Logout">
                                             <i class="feather icon-log-out"></i>
@@ -157,6 +156,7 @@
     <script src="js/vendor-all.min.js"></script>
     <script src="js/plugins/bootstrap.min.js"></script>
 	<script src="js/pcoded.min.js"></script>
+	<script src="js/ripple.js"></script>
 
 
 </body>

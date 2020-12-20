@@ -39,6 +39,7 @@ class acteur extends Model
      * @var array
      */
     protected $fillable = ['idcentre', 'id_supp', 'MATRICULE', 'NOM', 'PRENOM', 'N_TEL', 'fonction'];
+    public $timestamps = false;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\smartphoneController  ; 
 use App\Http\Controllers\affectationController ; 
+use App\Http\Controllers\countController  ; 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +33,21 @@ Route::get('/getdataSmartphone' , [smartphoneController::class , 'getdata'
 Route::get('/AjouterAffectation' , [affectationController::class , 'IndexAjout'
 ])->middleware(['auth']);
 
-Route::post('/AjouterAffectation' , [affectationController::class , 'add'
-])->middleware(['auth'])->name('affect.add');
+Route::post('/AjouterAffectation' , [affectationController::class , 'store'
+])->middleware(['auth']);
 
+Route::get('/getStatistiques' , [countController ::class , 'getCountsTel'
+])->middleware(['auth']) ;
+
+Route::get('/ajoutSmartphone' , [smartphoneController::class , 'add'
+])->middleware(['auth']);
+
+Route::post('/AjouterSmartphone' , [smartphoneController::class , 'store'
+])->middleware(['auth']);
+
+Route::get('/getAffectations' , [affectationController::class , 'getdata'
+])->middleware(['auth'])->name('affectations.list') ;
+
+Route::get('/afficherAffectations' , [affectationController::class , 'afficher'
+])->middleware(['auth']) ;
 require __DIR__.'/auth.php';

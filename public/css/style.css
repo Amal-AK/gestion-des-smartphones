@@ -20329,7 +20329,7 @@ pre[class*=language-]:before {
 }
 
 .pcoded-header .navbar-nav > li:last-child {
-    padding-right: 25px;
+    padding-right: 40px;
 }
 
 .pcoded-header .navbar-nav .dropdown {
@@ -21598,8 +21598,8 @@ pre[class*=language-]:before {
     float: unset;
     right: 0;
     top: 0;
+    min-height: 100vh ; 
     margin-left: 230px;
-    min-height: 100vh;
     transition: all 0.3s ease-in-out;
 }
 
@@ -24232,6 +24232,14 @@ text-align: center;
 
 td{
     padding: 10px 8px !important;
+    max-width: 150px;
+    min-height: 300px !important;
+    overflow: auto;
+    word-wrap: break-word;
+
+}
+.table td {
+    white-space: pre-wrap;
 }
 .form-row > .col, .form-row > [class*="col-"] {
     padding-left: 10px;

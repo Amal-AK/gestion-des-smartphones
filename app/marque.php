@@ -17,7 +17,7 @@ class marque extends Model
      * @var string
      */
     protected $table = 'marque';
-
+    public $timestamps = false;
     /**
      * The primary key for the model.
      * 

@@ -17,7 +17,7 @@ class modele extends Model
      * @var string
      */
     protected $table = 'modele';
-
+    public $timestamps = false;
     /**
      * The primary key for the model.
      * 
